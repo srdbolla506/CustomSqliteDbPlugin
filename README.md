@@ -8,6 +8,7 @@ CustomSqlitePlugin has following functions and can be used as follows:
 4) Destroy DB
 
 
+
 1) To open the database or create a database with path
 
 if path = "/Users/documents/Sqlite/SqlitePlugin.sqlite", then use the following:
