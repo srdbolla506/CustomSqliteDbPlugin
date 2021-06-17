@@ -16,7 +16,7 @@ class SqlitePlugin: CDVPlugin {
         do {
             if let databasePath = command.arguments[0] as? String {
                 db = try SQLiteDatabase.open(path: databasePath)
-                returnResult(command, message: databasePath, success: true)
+                returnResult(command, message: "Sqlite DB at path \(databasePath) has been successfully created or opened", success: true)
             }
         } catch SQLiteError.OpenDatabase(_) {
             returnResult(command, message: "Unable to open database.", success: false)
