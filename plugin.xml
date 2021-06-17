@@ -4,7 +4,6 @@
     <js-module name="SqlitePlugin" src="www/SqlitePlugin.js">
         <clobbers target="cordova.plugins" />
     </js-module>
-    
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="SqlitePlugin">
@@ -12,12 +11,9 @@
             </feature>
         </config-file>
         <source-file src="src/ios/SqlitePlugin.swift" />
-        <source-file src="src/ios/DatabasePath.swift" />
         <source-file src="src/ios/SQLiteDatabase.swift" />
         <header-file src="src/ios/Bridging-Header.h" type="BridgingHeader" />
-    </platform>
-    
-    <platform name="android">
+    </platform><platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="SqlitePlugin">
                 <param name="android-package" value="com.srdbolla.sqlitePlugin.SqlitePlugin" />

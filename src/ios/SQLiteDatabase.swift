@@ -155,7 +155,6 @@ class SQLiteDatabase {
                 }
                 resultArray.append(resultRowDictionary)
                 statementExecuted = sqlite3_step(queryStatement)
-                
             }
             return (resultArray, true)
         case SQLITE_DONE:
@@ -167,7 +166,7 @@ class SQLiteDatabase {
     }
     
     
-    static func destroyDatabase(databasePath: String?) {
+    static func destroyDatabase(databasePath: String?) -> (String, Bool) {
         guard let path = databasePath else {
             return ("Path doesn't exists", false)
         }

@@ -15,8 +15,8 @@ class SqlitePlugin: CDVPlugin {
     @objc func openDB(_ command: CDVInvokedUrlCommand) {
         do {
             if let databasePath = command.arguments[0] as? String {
-                db = try SQLiteDatabase.open(path: databasePath ?? "")
-                returnResult(command, message: "Successfully opened connection to database.", success: true)
+                db = try SQLiteDatabase.open(path: databasePath)
+                returnResult(command, message: databasePath, success: true)
             }
         } catch SQLiteError.OpenDatabase(_) {
             returnResult(command, message: "Unable to open database.", success: false)
@@ -51,9 +51,9 @@ class SqlitePlugin: CDVPlugin {
     @objc func destroyDatabase(_ command: CDVInvokedUrlCommand) {
         if let databasePath = command.arguments[0] as? String {
             let successOrErrorMessage = SQLiteDatabase.destroyDatabase(databasePath: databasePath)
-            returnResult(command, message: successOrErrorMessage?.0 ?? "", success: successOrErrorMessage?.1 ?? false)
+            returnResult(command, message: successOrErrorMessage.0, success: successOrErrorMessage.1)
         } else {
-            returnResult(command, message: successOrErrorMessage?.0 ?? "", success: successOrErrorMessage?.1 ?? false)
+            returnResult(command, message: "Input is not proper", success: false)
         }
     }
 
