@@ -1,0 +1,27 @@
+{
+  "name": "com.srdbolla.sqlitePlugin",
+  "version": "1.0.0",
+  "description": "",
+  "cordova": {
+    "id": "com.srdbolla.sqlitePlugin",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/srdbolla506/customSQLitePlugin.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srdbolla506/customSQLitePlugin/issues"
+  },
+  "homepage": "https://github.com/srdbolla506/customSQLitePlugin#readme"
+}
